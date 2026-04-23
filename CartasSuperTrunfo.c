@@ -13,8 +13,13 @@ int main() {
   char NomeCidade_Carta1[50], NomeCidade_Carta2[50]; // Nome da Cidade
   int Populacao_Carta1, Populacao_Carta2; // Populacao total
   float Area_Carta1, Area_Carta2; // Area em km²
-  float PIB_Carta1, PIB_Carta2; // PIB - Produto Interno Bruto
+  double PIB_Carta1, PIB_Carta2; // PIB - Produto Interno Bruto
   int Num_PontosTuristicos_Carta1, Num_PontosTuristicos_Carta2; // total de Pontos Turisticos
+
+   // Desafio Aventureiro, calculo do PIB per capto e Densidade Populacional
+   float PIB_perCapta_Carta1, PIB_perCapta_Carta2;
+   float DensidadePopulacional_Carta1, DensidadePopulacional_Carta2;
+
 
   // Área para entrada de dados
   //Entrada de dados da Carta 1
@@ -39,13 +44,17 @@ int main() {
    scanf("%f", &Area_Carta1);
    // PIB
    printf("Digite o PIB: ");
-   scanf("%f",&PIB_Carta1);
+   scanf("%lf",&PIB_Carta1);
    // Total de pontos turisticos
    printf("Digite o numero de pontos turisticos: ");
    scanf("%d",&Num_PontosTuristicos_Carta1);
    getchar();
    // Get char adicional para limpar o buffer ao executar pelo compilador
    //getchar();
+
+   // Calculo do PIB per capto e Densidade Populacional carta 1
+   DensidadePopulacional_Carta1 = (Populacao_Carta1 / Area_Carta1);
+   PIB_perCapta_Carta1 = (PIB_Carta1 / Populacao_Carta1);
    printf("\n---------------------------\n");
 
    //Entrada de dados da Carta 2
@@ -70,10 +79,14 @@ int main() {
    scanf("%f", &Area_Carta2);
    // PIB
    printf("Digite o PIB: ");
-   scanf("%f",&PIB_Carta2);
+   scanf("%lf",&PIB_Carta2);
    // Total de pontos turisticos
    printf("Digite o numero de pontos turisticos: ");
    scanf("%d",&Num_PontosTuristicos_Carta2);
+
+   // Calculo do PIB per capto e Densidade Populacional carta 2
+   DensidadePopulacional_Carta2 = (Populacao_Carta2 / Area_Carta2);
+   PIB_perCapta_Carta2 = ( PIB_Carta2 / Populacao_Carta2);
 
    // Removendo a quebra de linha dos nomes das cidades
    NomeCidade_Carta1[strcspn(NomeCidade_Carta1,"\n")] = 0;
@@ -88,8 +101,11 @@ int main() {
    printf("Nome da Cidade: %s\n", NomeCidade_Carta1);
    printf("Populacao: %d\n", Populacao_Carta1);
    printf("Area: %.2f km²\n", Area_Carta1);
-   printf("PIB: %.2f bilhoes de reais\n", PIB_Carta1);
+   printf("PIB: %.2lf bilhoes de reais\n", PIB_Carta1);
    printf("Numero de Pontos Turisticios: %d\n", Num_PontosTuristicos_Carta1);
+   // Exibicao dos Itens desafio Aventureiro
+   printf("Densidade Populacional: %.2f\n", DensidadePopulacional_Carta1);
+   printf("PIB per Capta: %.2f\n", PIB_perCapta_Carta1);
    printf("\n");
 
    // Exibição da Carta 2
@@ -99,9 +115,11 @@ int main() {
    printf("Nome da Cidade: %s\n", NomeCidade_Carta2);
    printf("Populacao: %d\n", Populacao_Carta2);
    printf("Area: %.2f km²\n", Area_Carta2);
-   printf("PIB: %.2f bilhoes de reais\n", PIB_Carta2);
+   printf("PIB: %.2lf bilhoes de reais\n", PIB_Carta2);
    printf("Numero de Pontos Turisticios: %d\n", Num_PontosTuristicos_Carta2);
-
+   // Exibicao dos Itens desafio Aventureiro
+   printf("Densidade Populacional: %.2f\n", DensidadePopulacional_Carta2);
+   printf("PIB per Capta: %.2f\n", PIB_perCapta_Carta2);
 
 return 0;
 } 
