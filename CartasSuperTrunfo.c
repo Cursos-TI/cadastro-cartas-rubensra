@@ -11,15 +11,17 @@ int main() {
   // Codigo numerico formado pela Letra e um numero entre 01 e 04 
   char Cod_Carta1[4], Cod_Carta2[4]; 
   char NomeCidade_Carta1[50], NomeCidade_Carta2[50]; // Nome da Cidade
-  int Populacao_Carta1, Populacao_Carta2; // Populacao total
+  unsigned long int Populacao_Carta1, Populacao_Carta2; // Populacao total
   float Area_Carta1, Area_Carta2; // Area em km²
-  double PIB_Carta1, PIB_Carta2; // PIB - Produto Interno Bruto
+  double PIB_Carta1, PIB_Carta2; // PIB - Produto Interno Bruto como "double" por erro de precisa com "float"
   int Num_PontosTuristicos_Carta1, Num_PontosTuristicos_Carta2; // total de Pontos Turisticos
 
    // Desafio Aventureiro, calculo do PIB per capto e Densidade Populacional
    float PIB_perCapta_Carta1, PIB_perCapta_Carta2;
    float DensidadePopulacional_Carta1, DensidadePopulacional_Carta2;
 
+  // Desafio Mestre, calculo do superpoder e comparação dos atributos das cartas
+  float SuperPoder_Carta1, SuperPoder_Carta2;
 
   // Área para entrada de dados
   //Entrada de dados da Carta 1
@@ -55,6 +57,7 @@ int main() {
    // Calculo do PIB per capto e Densidade Populacional carta 1
    DensidadePopulacional_Carta1 = (Populacao_Carta1 / Area_Carta1);
    PIB_perCapta_Carta1 = (PIB_Carta1 / Populacao_Carta1);
+   SuperPoder_Carta1 = (float)( Populacao_Carta1 + Area_Carta1 + PIB_Carta1 + PIB_perCapta_Carta1 + (float)(1/DensidadePopulacional_Carta1));
    printf("\n---------------------------\n");
 
    //Entrada de dados da Carta 2
@@ -87,7 +90,7 @@ int main() {
    // Calculo do PIB per capto e Densidade Populacional carta 2
    DensidadePopulacional_Carta2 = (Populacao_Carta2 / Area_Carta2);
    PIB_perCapta_Carta2 = ( PIB_Carta2 / Populacao_Carta2);
-
+   SuperPoder_Carta2 = (float)( Populacao_Carta2 + Area_Carta2 + PIB_Carta2 + PIB_perCapta_Carta2 + (float)(1/DensidadePopulacional_Carta2));
    // Removendo a quebra de linha dos nomes das cidades
    NomeCidade_Carta1[strcspn(NomeCidade_Carta1,"\n")] = 0;
    NomeCidade_Carta2[strcspn(NomeCidade_Carta2,"\n")] = 0;
@@ -120,6 +123,16 @@ int main() {
    // Exibicao dos Itens desafio Aventureiro
    printf("Densidade Populacional: %.2f\n", DensidadePopulacional_Carta2);
    printf("PIB per Capta: %.2f\n", PIB_perCapta_Carta2);
+
+   printf("\n----------------------------------------\n");
+   printf("Comparação de Cartas: \n");
+   printf("População: venceu (%d)\n", (Populacao_Carta1 > Populacao_Carta2));
+   printf("Area: venceu (%d)\n", (Area_Carta1 > Area_Carta2));
+   printf("PIB: venceu (%d)\n", (PIB_Carta1 > PIB_Carta2));
+   printf("Pontos Turisticos: venceu (%d)\n", (Num_PontosTuristicos_Carta1 > Num_PontosTuristicos_Carta2));
+   printf("Densidade Populacional: venceu (%d)\n", (DensidadePopulacional_Carta1 > DensidadePopulacional_Carta2));
+   printf("PIB per Capita: venceu (%d)\n", (PIB_perCapta_Carta1 > PIB_perCapta_Carta2));
+   printf("Super Poder: venceu(%d)\n", (SuperPoder_Carta1 > SuperPoder_Carta2));
 
 return 0;
 } 
