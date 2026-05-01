@@ -40,7 +40,7 @@ int main() {
    fgets(NomeCidade_Carta1,50,stdin);
    // Populacao
    printf("Digite a populacao: ");
-   scanf("%d",&Populacao_Carta1);
+   scanf("%lu",&Populacao_Carta1);
    // Area em km²
    printf("Digite a area: ");
    scanf("%f", &Area_Carta1);
@@ -76,7 +76,7 @@ int main() {
    fgets(NomeCidade_Carta2,50,stdin);
    // Populacao
    printf("Digite a populacao: ");
-   scanf("%d",&Populacao_Carta2);
+   scanf("%lu",&Populacao_Carta2);
    // Area em km²
    printf("Digite a area: ");
    scanf("%f", &Area_Carta2);
@@ -102,7 +102,7 @@ int main() {
    printf("Estado: %s\n", Estado_Carta1);
    printf("Codigo: %s\n", Cod_Carta1);
    printf("Nome da Cidade: %s\n", NomeCidade_Carta1);
-   printf("Populacao: %d\n", Populacao_Carta1);
+   printf("Populacao: %lu\n", Populacao_Carta1);
    printf("Area: %.2f km²\n", Area_Carta1);
    printf("PIB: %.2lf bilhoes de reais\n", PIB_Carta1);
    printf("Numero de Pontos Turisticios: %d\n", Num_PontosTuristicos_Carta1);
@@ -116,7 +116,7 @@ int main() {
    printf("Estado: %s\n", Estado_Carta2);
    printf("Codigo: %s\n", Cod_Carta2);
    printf("Nome da Cidade: %s\n", NomeCidade_Carta2);
-   printf("Populacao: %d\n", Populacao_Carta2);
+   printf("Populacao: %lu\n", Populacao_Carta2);
    printf("Area: %.2f km²\n", Area_Carta2);
    printf("PIB: %.2lf bilhoes de reais\n", PIB_Carta2);
    printf("Numero de Pontos Turisticios: %d\n", Num_PontosTuristicos_Carta2);
@@ -130,7 +130,7 @@ int main() {
    printf("Area: venceu (%d)\n", (Area_Carta1 > Area_Carta2));
    printf("PIB: venceu (%d)\n", (PIB_Carta1 > PIB_Carta2));
    printf("Pontos Turisticos: venceu (%d)\n", (Num_PontosTuristicos_Carta1 > Num_PontosTuristicos_Carta2));
-   printf("Densidade Populacional: venceu (%d)\n", (DensidadePopulacional_Carta1 > DensidadePopulacional_Carta2));
+   printf("Densidade Populacional: venceu (%d)\n", (DensidadePopulacional_Carta1 < DensidadePopulacional_Carta2));
    printf("PIB per Capita: venceu (%d)\n", (PIB_perCapta_Carta1 > PIB_perCapta_Carta2));
    printf("Super Poder: venceu(%d)\n", (SuperPoder_Carta1 > SuperPoder_Carta2));
 
